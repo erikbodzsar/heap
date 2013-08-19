@@ -6,8 +6,6 @@
 #include <utility>
 #include <boost/unordered_map.hpp>
 
-#include <cstdio>
-
 #define PARENT(x) (((x)-1)/2)
 #define LEFT_CHILD(x) (((x)*2)+1)
 #define RIGHT_CHILD(x) (((x)*2)+2)
@@ -45,10 +43,8 @@ class heap {
       value old_val = data_[index].first;
       data_[index].first = new_val;
       if (less_(old_val, new_val)) {
-        fprintf(stderr, "bubbling down\n");
         bubble_down(index);
       } else {
-        fprintf(stderr, "bubbling up\n");
         bubble_up(index);
       }
     }
